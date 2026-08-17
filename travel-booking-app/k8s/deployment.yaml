@@ -12,29 +12,34 @@ spec:
       app: travel-booking-app
 
   template:
+
     metadata:
       labels:
         app: travel-booking-app
 
     spec:
+
       containers:
-        - name: travel-booking-app
 
-          image: roshan19ro/travel-booking-app:
+      - name: travel-booking-app
 
-          imagePullPolicy: Always
+        image: roshan19ro/travel-booking-app:7
 
-          ports:
-            - containerPort: 8081
+        imagePullPolicy: Always
 
-          env:
-            - name: SPRING_DATASOURCE_URL
-              value: "jdbc:mysql://ro-db.cevgq4ic87x5.us-east-1.rds.amazonaws.com:3306/traveldb"
+        ports:
 
-            - name: SPRING_DATASOURCE_USERNAME
-              value: "roshanro"
+        - containerPort: 8081
 
-            - name: SPRING_DATASOURCE_PASSWORD
-              value: "roshanro"
+        env:
+
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:mysql://ro-db.cevgq4ic87x5.us-east-1.rds.amazonaws.com:3306/traveldb
+
+        - name: SPRING_DATASOURCE_USERNAME
+          value: roshanro
+
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: roshanro
 
 

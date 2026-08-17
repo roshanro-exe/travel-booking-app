@@ -5,13 +5,16 @@ metadata:
   name: travel-booking-service
 
 spec:
+
   type: NodePort
 
   selector:
     app: travel-booking-app
 
   ports:
-    - protocol: TCP
-      port: 8081
-      targetPort: 8081
-      nodePort: 30081
+
+  - port: 8081
+
+    targetPort: 8081
+
+    nodePort: 30081

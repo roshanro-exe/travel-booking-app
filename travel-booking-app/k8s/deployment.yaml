@@ -20,7 +20,7 @@ spec:
       containers:
         - name: travel-booking-app
 
-          image: roshan19ro/travel-booking-app:10
+          image: roshan19ro/travel-booking-app:
 
           imagePullPolicy: Always
 
@@ -36,8 +36,5 @@ spec:
 
             - name: SPRING_DATASOURCE_PASSWORD
               value: "roshanro"
-
-        - name: SPRING_DATASOURCE_PASSWORD
-          value: roshanro
 
 

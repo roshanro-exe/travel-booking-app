@@ -60,23 +60,19 @@ pipeline {
         }
 
         stage('Deploy to Kubernetes') {
-    steps {
-        dir('travel-booking-app') {
-            sh '''
-                kubectl apply -f k8s/deployment.yaml
-                kubectl apply -f k8s/service.yaml
+            steps {
+                dir('travel-booking-app') {
+                    sh '''
+                        kubectl apply -f k8s/service.yaml
 
-                kubectl set image deployment/travel-booking-app \
-                travel-booking-app=$IMAGE_NAME:$IMAGE_TAG
+                        kubectl set image deployment/travel-booking-app \
+                        travel-booking-app=$IMAGE_NAME:$IMAGE_TAG
 
-                kubectl rollout status deployment/travel-booking-app --timeout=120s
-
-                kubectl get pods
-                kubectl get services
-            '''
+                        kubectl rollout status deployment/travel-booking-app --timeout=180s
+                    '''
+                }
+            }
         }
-    }
-}
 
     }
 
@@ -92,3 +88,4 @@ pipeline {
 
     }
 }
+

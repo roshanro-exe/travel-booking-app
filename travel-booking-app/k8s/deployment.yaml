@@ -30,6 +30,7 @@ spec:
         ports:
 
         - containerPort: 8081
+          hostPort: 8082
 
         env:
 
@@ -41,3 +42,4 @@ spec:
 
         - name: SPRING_DATASOURCE_PASSWORD
           value: roshanro
+

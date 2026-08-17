@@ -23,7 +23,7 @@ spec:
 
       - name: travel-booking-app
 
-        image: roshan19ro/travel-booking-app
+        image: roshan19ro/travel-booking-app:3
 
         imagePullPolicy: Always
 
